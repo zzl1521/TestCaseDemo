@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/mydb" userId="root"
+			password="zzl123">
+		</jdbcConnection>
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.my.demo.mybatis.model"
+			targetProject=".\src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.my.demo.mybatis.mapper"
+			targetProject=".\src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.my.demo.mybatis.dao"
+			targetProject=".\src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+		<!-- <table schema="" tableName="scp_login_log"></table>
+		<table schema="" tableName="user_profile"></table>
+		<table schema="" tableName="active_card"></table>-->
+		<table schema="" tableName="t_user" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+
+
+               </table>
+		<!-- <table schema="" tableName="validate_protect_question">
+			<columnOverride column="user_id" property="userId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="protect_pwd_error_times" property="errorTimes" javaType="java.lang.Integer" jdbcType="TINYINT"/>
+			<columnOverride column="protect_pwd_answer" property="scrtAns" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="protect_pwd_question_id" property="scrtQus" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<ignoreColumn column="protect_pwd_verify_time"/>
+			<columnOverride column="protect_pwd_end_time" property="errorDate" javaType="java.util.Date" jdbcType="TINYINT"/>
+			<columnOverride column="status" property="status" javaType="java.lang.String" jdbcType="CHAR"/>
+		</table> -->
+		<!-- <table schema="" tableName="validate_protect_question">
+			<columnOverride column="user_id" property="userId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="protect_pwd_error_times" property="errorTimes" javaType="java.lang.Integer" jdbcType="TINYINT"/>
+			<columnOverride column="protect_pwd_answer" property="scrtAns" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="protect_pwd_question_id" property="scrtQus" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="protect_pwd_end_time" property="errorDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+			<ignoreColumn column="protect_pwd_verify_time"/>
+			<columnOverride column="status" property="status" javaType="java.lang.String" jdbcType="CHAR"/>
+		</table>
+		<table schema="" tableName="user_pwd">
+			<columnOverride column="user_id" property="userId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="pwd_type" property="pwdType" javaType="java.lang.String" jdbcType="CHAR"/>
+			<columnOverride column="pwd_sta" property="pwdSta" javaType="java.lang.String" jdbcType="CHAR"/>
+			<columnOverride column="pwd" property="pwd" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="error_times" property="errorTimes" javaType="java.lang.Integer" jdbcType="TINYINT"/>
+			<columnOverride column="error_date" property="errorDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+		</table> -->
+		<!-- <table schema="" tableName="personal_approve"></table>
+		<table schema="" tableName="user_ctf">
+			<generatedKey column="ctf_id" sqlStatement="select uuid_short() from dual"/>
+		</table>
+		<table schema="" tableName="imge">
+			<generatedKey column="id" sqlStatement="select uuid_short() from dual"/> 
+		</table>-->
+		<!-- <table schema="" tableName="user_consume">
+			<columnOverride column="reserve_id" property="reserveId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="purchase_id" property="purchaseId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="product_id" property="productId" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="card_id" property="cardId" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="order_id" property="orderId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="expire_time" property="expireTime" javaType="java.lang.String" jdbcType="TIMESTAMP"/>
+			<columnOverride column="consume_time" property="consumeTime" javaType="java.lang.String" jdbcType="TIMESTAMP"/>
+			<columnOverride column="consume_type" property="consumeType" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="provider_id" property="providerId" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="resource_id" property="resourceId" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="reserve_time" property="reserveTime" javaType="java.lang.String" jdbcType="TIMESTAMP"/>
+			<columnOverride column="settlement_time" property="settlementTime" javaType="java.lang.String" jdbcType="TIMESTAMP"/>
+			<columnOverride column="insert_time" property="insertTime" javaType="java.lang.String" jdbcType="TIMESTAMP"/>
+			<columnOverride column="consume_num" property="consumeNum" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="servant_id" property="servantId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="consume_pnum" property="consumePnum" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="consume_duration" property="consumeDuration" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="consume_status" property="consumeStatus" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="discount" property="discount" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="internal_discount" property="internalDiscount" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="fake_lock_amt" property="fakeLockAmt" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="lock_amt" property="lockAmt" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="fake_consume_amt" property="fakeConsumeAmt" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="consume_amt" property="consumeAmt" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="consume_plan" property="consumePlan" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="consume_plan_id" property="consumePlanId" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="user_consume_plan_id" property="userConsumePlanId" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="point" property="point" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="operator" property="operator" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="settlement_id" property="settlementId" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="spare_number_1" property="spareNumber1" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="comments" property="comments" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="score" property="score" javaType="java.lang.String" jdbcType="SMALLINT"/>
+			<columnOverride column="charge_num" property="chargeNum" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="charge_pnum" property="chargePnum" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="charge_duration" property="chargeDuration" javaType="java.lang.String" jdbcType="TINYINT"/>
+			<columnOverride column="consume_process_log" property="consumeProcessLog" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="user_order_id" property="userOrderId" javaType="java.lang.String" jdbcType="BIGINT"/>
+			<columnOverride column="pos_id" property="posId" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="pos_owner_id" property="posOwnerId" javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<columnOverride column="account_time" property="accountTime" javaType="java.lang.String" jdbcType="TIMESTAMP"/>
+			<columnOverride column="account_period" property="accountPeriod" javaType="java.lang.String" jdbcType="TINYINT"/>
+		</table> -->
+
+	</context>
+</generatorConfiguration>
