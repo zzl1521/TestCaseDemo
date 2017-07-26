@@ -27,7 +27,7 @@ public class ScoketClient {
         ByteArrayOutputStream stream = null;
 
         // 向服务器端发送请求，服务器IP地址和服务器监听的端口号 119.253.49.219
-        Socket client = new Socket("127.0.0.1", 8586);
+        Socket client = new Socket("192.168.18.74", 8587);
         client.setSoTimeout(5 * 1000);
         out = client.getOutputStream();
 

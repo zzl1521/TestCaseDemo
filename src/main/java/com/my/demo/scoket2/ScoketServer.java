@@ -17,7 +17,7 @@ public class ScoketServer {
         // 让服务器端程序开始监听来自4242端口的客户端请求
         if (ss == null) {
             try {
-                ss = new ServerSocket(8586);
+                ss = new ServerSocket(8587);
             } catch (IOException e) {
                 e.printStackTrace();
             }

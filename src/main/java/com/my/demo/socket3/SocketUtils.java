@@ -95,8 +95,8 @@ public class SocketUtils {
     }
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println(sendSocketClient("127.0.0.1", "8587", 8, "GBK", "您好123abc"));
-    }
+    }*/
 
 }

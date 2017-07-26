@@ -1,11 +1,6 @@
 package com.my.demo.scoket;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.lang.management.ManagementFactory;
+import java.io.*;
 import java.net.Socket;
 
 
@@ -38,7 +33,7 @@ public class ScoketClient {
 
         ScoketClient s = new ScoketClient();
         //向服务器端发送请求，服务器IP地址和服务器监听的端口号   119.253.49.219
-        Socket client = new Socket("localhost", 8585);
+        Socket client = new Socket("192.168.18.74", 8585);
         client.setSoTimeout(5 * 1000);
         //通过printWriter 来向服务器发送消息
         PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(client.getOutputStream(),"UTF-8"),true);
@@ -87,7 +82,7 @@ public class ScoketClient {
     public static void notifyed() throws  IOException {
 
         //向服务器端发送请求，服务器IP地址和服务器监听的端口号   119.253.49.219
-        Socket client = new Socket("192.168.1.87", 8289);
+        Socket client = new Socket("192.168.18.74", 8289);
 
         //通过printWriter 来向服务器发送消息
         PrintWriter printWriter = new PrintWriter(client.getOutputStream());

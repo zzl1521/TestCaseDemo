@@ -7,7 +7,9 @@ import java.nio.channels.SocketChannel;
 import java.net.InetAddress;
 
 /**
- * TCP/IP的NIO非阻塞方式  
+ * *****启动完成客户端 ，从控制台输入消息，服务器便可接受*****
+ * *****可以打开 cmd ： telnet 127.0.0.1 9099 输入即可接受*****
+ * TCP/IP的NIO非阻塞方式
  * 客户端  
  * */
 public class Client {
@@ -42,7 +44,7 @@ public class Client {
     }
 
     public static void main(String[] args) throws IOException {
-        new Client().query("localhost", 8099);
+        new Client().query("localhost", 9099);
 
     }
 }
