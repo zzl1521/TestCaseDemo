@@ -1,7 +1,6 @@
-package com.my.demo.servlet;
+package com.my.demo.objectStream;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,21 +11,19 @@ import java.util.Map;
 /**
  * Created by zhangzhile on 2017/5/25.
  */
-@WebServlet(name = "UserServlet")
 public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//read object from stream ·´ĞòÁĞ»¯½«streamÉú³ÉObject¶ÔÏó
-        ObjectInputStream ois = new ObjectInputStream(request.getInputStream());//HttpServletRequest req¶ÔÏó
+//read object from stream ååºåˆ—åŒ–å°†streamç”ŸæˆObjectå¯¹è±¡
+        ObjectInputStream ois = new ObjectInputStream(request.getInputStream());//HttpServletRequest reqå¯¹è±¡
         try {
             Object value = ois.readObject();
-            System.out.println("·´ĞòÁĞ»¯¶ÔÏó£º" + value);
+            System.out.println("ååºåˆ—åŒ–å¯¹è±¡ï¼š"+value);
             Map user = (Map) value;
-            System.out.println("·´ĞòÁĞ»¯¶ÔÏógetUserName£º" + user.get("userName"));
-            System.out.println("·´ĞòÁĞ»¯¶ÔÏógetAge£º" + user.get("age"));
+            System.out.println("ååºåˆ—åŒ–å¯¹è±¡getUserNameï¼š"+user.get("userName"));
+            System.out.println("ååºåˆ—åŒ–å¯¹è±¡getAgeï¼š"+user.get("age"));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

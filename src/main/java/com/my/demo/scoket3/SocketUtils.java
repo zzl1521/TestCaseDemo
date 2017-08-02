@@ -1,4 +1,4 @@
-package com.my.demo.socket3;
+package com.my.demo.scoket3;
 
 import com.my.demo.scoket2.ReportUtil;
 

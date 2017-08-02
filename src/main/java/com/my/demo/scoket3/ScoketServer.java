@@ -1,4 +1,4 @@
-package com.my.demo.socket3;
+package com.my.demo.scoket3;
 
 import java.io.*;
 import java.net.ServerSocket;
