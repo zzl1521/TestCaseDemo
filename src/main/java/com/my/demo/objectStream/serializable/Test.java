@@ -1,4 +1,4 @@
-package com.my.demo.serializable;
+package com.my.demo.objectStream.serializable;
 
 import java.io.*;
 import java.util.HashMap;
