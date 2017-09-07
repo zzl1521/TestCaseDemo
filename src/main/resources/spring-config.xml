@@ -29,5 +29,6 @@
     <!-- 引入子配置文件-->
     <!--<import resource="spring/dao/spring-config-dao.xml"/>-->
 
+    <bean class="com.my.demo.proxy.factory.ProxyFactoryBean" id="proxyFactoryBean"></bean>
 
 </beans>

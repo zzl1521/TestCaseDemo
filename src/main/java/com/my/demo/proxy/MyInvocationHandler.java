@@ -25,13 +25,13 @@ public class MyInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
         // 在目标对象的方法执行之前简单的打印一下
-        System.out.println("------------------before------------------");
+        System.out.println("-------before----------");
 
         // 执行目标对象的方法
-        Object  result = method.invoke(target, args);
+        Object result = method.invoke(target, args);
 
         // 在目标对象的方法执行之后简单的打印一下
-        System.out.println("-------------------after------------------");
+        System.out.println("-------after-----------");
 
         return result;
     }

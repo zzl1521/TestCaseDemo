@@ -8,7 +8,6 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void add(String str) throws Exception {
-        System.out.println("------------add-----------");
-        System.out.println("=="+str);
+        System.out.println("收到参数 -- "+str);
     }
 }

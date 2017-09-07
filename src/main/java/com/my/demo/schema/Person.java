@@ -6,7 +6,7 @@ package com.my.demo.schema;
 public class Person {
 
     private String id;
-    private String name;
+    private String names;
     private Integer age;
 
     public String getId() {
@@ -18,11 +18,11 @@ public class Person {
     }
 
     public String getName() {
-        return name;
+        return names;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.names = name;
     }
 
     public void setAge(Integer age) {

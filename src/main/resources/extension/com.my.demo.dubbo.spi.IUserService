@@ -1,0 +1,2 @@
+A=com.my.demo.dubbo.spi.UserServiceAImpl
+B=com.my.demo.dubbo.spi.UserServiceBImpl
