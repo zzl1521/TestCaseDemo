@@ -38,6 +38,7 @@ public class HttpConnectionUtil {
             // 设置content_type=SERIALIZED_OBJECT
             // 如果不设此项,在传送序列化对象时,当WEB服务默认的不是这种类型时可能抛java.io.EOFException
             httpUrlConn.setRequestProperty("Content-Type","application/x-java-serialized-object");
+
             httpUrlConn.setConnectTimeout(connTimeoutMills);
             httpUrlConn.setReadTimeout(readTimeoutMills);
             // 设置是否向httpUrlConn输出，因为是post请求，参数要放在http正文内，因此需要设为true, 默认情况下是false
