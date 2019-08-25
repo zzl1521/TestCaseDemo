@@ -14,7 +14,7 @@ public class ErfenQuery {
         int lo = 0;
         int hi = arr.length - 1;
         while (lo <= hi) {
-            index = lo + (hi - lo) / 2;
+            index = lo + (hi - lo) / 2; //如果是右移运算符必须括号括起来 lo + ((hi - lo) >> 1)
             if (arr[index] == num) {
                 return index;
             }

@@ -1,7 +1,8 @@
 package com.my.demo.arithmetic;
 
 /**
- * ¿ìËÙÅÅĞò
+ * å¿«é€Ÿæ’åº
+ * å¿«æ’çš„æ€è·¯ï¼šå–æ•°ç»„ä¸­çš„ä¸€ä¸ªå€¼keyï¼Œåˆ†åˆ«åˆ¤æ–­
  *
  * @author: ZhangZhiLe
  * @date: Created in 2018/10/20 11:41
@@ -12,14 +13,14 @@ public class FastSort {
 
 
     public static int partition(int[] array, int lo, int hi) {
-        //¹Ì¶¨µÄÇĞ·Ö·½Ê½
+        //å›ºå®šçš„åˆ‡åˆ†æ–¹å¼
         int key = array[lo];
         while (lo < hi) {
-            while (array[hi] >= key && hi > lo) {//´Óºó°ë²¿·ÖÏòÇ°É¨Ãè
+            while (array[hi] >= key && hi > lo) {//ä»ååŠéƒ¨åˆ†å‘å‰æ‰«æ
                 hi--;
             }
             array[lo] = array[hi];  //2  2
-            while (array[lo] <= key && hi > lo) {//´ÓÇ°°ë²¿·ÖÏòºóÉ¨Ãè
+            while (array[lo] <= key && hi > lo) {//ä»å‰åŠéƒ¨åˆ†å‘åæ‰«æ
                 lo++;
             }
             array[hi] = array[lo];
